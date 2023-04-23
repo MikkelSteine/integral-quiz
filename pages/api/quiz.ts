@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Quiz = {
-  markers: [{ question: string }]
+  markers: { question: string }[]
 }
 
 export default function handler(
