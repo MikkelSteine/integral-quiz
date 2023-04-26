@@ -13,14 +13,14 @@ jobs:
       - uses: actions/checkout@v3
       - run: npm ci && npm run build
         env:
-          AUTH0_CLIENT_ID: ${{ secrets.AUTH0_CLIENT_ID }}
-          AUTH0_CLIENT_SECRET: ${{ secrets.AUTH0_CLIENT_SECRET }}
-          AUTH0_SECRET: ${{ secrets.AUTH0_SECRET }}
+          AUTH0_CLIENT_ID: '${{ secrets.AUTH0_CLIENT_ID }}'
+          AUTH0_CLIENT_SECRET: '${{ secrets.AUTH0_CLIENT_SECRET }}'
+          AUTH0_SECRET: '${{ secrets.AUTH0_SECRET }}'
+      - name: Enable Firebase Experiments
+        run: /usr/local/bin/npx firebase-tools@latest experiments:enable webframeworks
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_INTEGRAL_QUIZ }}'
           channelId: live
           projectId: integral-quiz
-        env:
-          FIREBASE_CLI_EXPERIMENTS: webframeworks
