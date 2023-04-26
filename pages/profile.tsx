@@ -14,7 +14,7 @@ export default withPageAuthRequired(function Profile({ user }) {
                 <div>
                     <h2>{user.name}</h2>
                     <p>{user.email}</p>
-                    <img src={user.picture} alt={user.name} referrerpolicy="no-referrer" />
+                    <img src={user.picture} alt={user.name} referrerPolicy="no-referrer" />
                 </div>
             </Layout>
             )
