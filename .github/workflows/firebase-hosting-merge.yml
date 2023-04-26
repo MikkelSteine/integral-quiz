@@ -17,7 +17,7 @@ jobs:
           AUTH0_CLIENT_SECRET: '${{ secrets.AUTH0_CLIENT_SECRET }}'
           AUTH0_SECRET: '${{ secrets.AUTH0_SECRET }}'
       - name: Enable Firebase Experiments
-        run: /usr/local/bin/npx firebase-tools@latest experiments:enable webframeworks
+        run: /usr/local/bin/npx firebase-tools@11.13.0 experiments:enable webframeworks
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
